@@ -1,3 +1,5 @@
 app-data/
 testing/
 gecko/
+.DS_Store
+geckdriver.log
