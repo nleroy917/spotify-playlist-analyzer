@@ -19,9 +19,9 @@ install_dir="gecko/"
 json=$(curl -s https://api.github.com/repos/mozilla/geckodriver/releases/latest)
 
 if [[ $(uname) == "Darwin" ]]; then
-    url=$(echo "$json" | jq -r '.assets[].browser_download_url | select(contains("macos"))')
+    url=$(curl -s https://api.github.com/repos/mozilla/geckodriver/releases/latest | python -c "import sys, json; print(next(item['browser_download_url'] for item in json.load(sys.stdin)['assets'] if 'macos' in item.get('browser_download_url', '')))")
 elif [[ $(uname) == "Linux" ]]; then
-    url=$(echo "$json" | jq -r '.assets[].browser_download_url | select(contains("linux64"))')
+    url=$(curl -s https://api.github.com/repos/mozilla/geckodriver/releases/latest | python -c "import sys, json; print(next(item['browser_download_url'] for item in json.load(sys.stdin)['assets'] if 'linux64' in item.get('browser_download_url', '')))")
 else
     echo "can't determine OS"
     exit 1
