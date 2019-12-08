@@ -40,3 +40,5 @@ echo "Copying config file . . . please fill out credentials accordingly . . ."
 read -p "Press enter when ready . . ."
 cp app-data/config-template.ini testing/configs/config.ini
 nano testing/configs/config.ini
+
+echo "You may now run main.py to analyze your data!"

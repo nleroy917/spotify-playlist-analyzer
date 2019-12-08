@@ -1,4 +1,4 @@
-#! bin/bash/python3
+#! bin/bash/python
 
 from lib.authorize import *
 from lib.playlists import *

@@ -4,20 +4,20 @@ The purpose of this code is to provide the groundwork for a potential website th
 
 It can be run locally on your machine to analyze your own playlists, however. Currently, the script is only supported on Linux and MacOSX.
 
-1. git clone this repo onto your system
+1.  Git clone this repo onto your system
 
-2. Run the setup.sh script to download the gecko driver and set up the directories
+2.  Run the setup.sh script to download the gecko driver and set up the directories: 
 	For Linux:
 	```./setup.sh```
 	for MacOSX:
 	```sh setup.sh```
 
-3. Fill out the config file accordingly with your username and password
+3.  Fill out the config file accordingly with your username and password
 	Yes, I gave you access to the client secret . . . please be nice with it
 
-4. The script will automatically search your playlists for the Top Songs 2019 playlist... Make sure you have already had Spotify generate this data for you and you are following the playlist (I assume you are if you are reading this documentation). If you wish to view this data for any of your other playlists, you can change the hard coded playlist name in the main script on **line 22**.
+4.  The script will automatically search your playlists for the Top Songs 2019 playlist... Make sure you have already had Spotify generate this data for you and you are following the playlist (I assume you are if you are reading this documentation). If you wish to view this data for any of your other playlists, you can change the hard coded playlist name in the main script on **line 22**.
 
-5. Run the main script:
+5.  Run the main script:
 	```python main.py```
 
 ---
