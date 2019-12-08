@@ -11,7 +11,7 @@ if __name__ == '__main__':
 	spotify_authenticator.authorize()
 	auth_header = spotify_authenticator.generate_header()
 
-	username = 'NLeRoy917'
+	username = spotify_authenticator.username
 	wrapped_2019 = 'https://open.spotify.com/playlist/37i9dQZF1Ethb70Ir9WW6o?si=yrv4GDu6SBeUc8PexoZ_HQ'
 
 	wrapped_id = get_playlist_id(wrapped_2019)
