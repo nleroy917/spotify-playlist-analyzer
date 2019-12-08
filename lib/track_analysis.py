@@ -120,7 +120,7 @@ def int_to_mode(mode_int):
 	return mode
 
 
-def key_analysis(tracks,auth_header):
+def key_analysis(tracks,auth_header,show_plot=False):
 
 	key_int_store = []
 	mode_int_store = []
@@ -161,23 +161,24 @@ def key_analysis(tracks,auth_header):
 	df_keys = pd.DataFrame(key_dist,index=[0])
 	df_mode = pd.DataFrame(mode_dist,index=[0])
 
-	# Plot as a bar 
-	plt.figure(1)
-	plt.bar(x=range(len(key_dist)),height=list(key_dist.values()),align='center',color='teal')
-	plt.xticks(ticks=range(len(key_dist)), labels=list(key_dist.keys()))
-	plt.xlabel('Key')
-	plt.ylabel('Count')
-	plt.title('Spotify Wrapped 2019 Key Distribution')
-	#print(key_dist.keys())
-	plt.figure(2)
-	plt.bar(x=range(len(mode_dist)),height=list(mode_dist.values()),align='center',color='teal')
-	plt.xticks(ticks=range(len(mode_dist)), labels=list(mode_dist.keys()))
-	plt.xlabel('Mode')
-	plt.ylabel('Count')
-	plt.title('Spotify Wrapped 2019 Mode Distribution')
-	#print(mode_dist.keys())
+	if show_plot == True:
+		# Plot as a bar 
+		plt.figure(1)
+		plt.bar(x=range(len(key_dist)),height=list(key_dist.values()),align='center',color='teal')
+		plt.xticks(ticks=range(len(key_dist)), labels=list(key_dist.keys()))
+		plt.xlabel('Key')
+		plt.ylabel('Count')
+		plt.title('Spotify Wrapped 2019 Key Distribution')
+		#print(key_dist.keys())
+		plt.figure(2)
+		plt.bar(x=range(len(mode_dist)),height=list(mode_dist.values()),align='center',color='teal')
+		plt.xticks(ticks=range(len(mode_dist)), labels=list(mode_dist.keys()))
+		plt.xlabel('Mode')
+		plt.ylabel('Count')
+		plt.title('Spotify Wrapped 2019 Mode Distribution')
+		#print(mode_dist.keys())
 
-	plt.show()
+		plt.show()
 
 	return key_dist, mode_dist
 

@@ -23,7 +23,7 @@ if __name__ == '__main__':
 		print(track['name'],'|',analysis['loudness'],'|',int_to_key(analysis['key']),'|',int_to_mode(analysis['mode']),'|',analysis['tempo'])
 
 	loudness_data = loudness_analysis(tracks,auth_header,show_plot=True)
-	key_data, mode_data = key_analysis(tracks,auth_header)
+	key_data, mode_data = key_analysis(tracks,auth_header,show_plot=True)
 	tempo_data = tempo_analysis(tracks,auth_header,show_plot=True)
 
 	print(loudness_data)
