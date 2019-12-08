@@ -20,10 +20,13 @@ if __name__ == '__main__':
 
 	for track in tracks:
 		analysis = get_track_data(track['id'],auth_header)
-		print(track['name'],'|',analysis['loudness'])
+		print(track['name'],'|',analysis['loudness'],'|',int_to_key(analysis['key']),'|',int_to_mode(analysis['mode']),'|',analysis['tempo'])
 
-	loudness_data = playlist_loudness_analysis(tracks,auth_header)
+	loudness_data = loudness_analysis(tracks,auth_header,show_plot=True)
+	key_data, mode_data = key_analysis(tracks,auth_header)
+	tempo_data = tempo_analysis(tracks,auth_header,show_plot=True)
 
-	print('-='*30)
-	for key in loudness_data:
-		print(key,':',loudness_data[key])
+	print(loudness_data)
+	print(key_data)
+	print(mode_data)
+	print(tempo_data)
