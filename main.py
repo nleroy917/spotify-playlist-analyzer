@@ -3,7 +3,7 @@
 from lib.authorize import *
 from lib.playlists import *
 from lib.track_analysis import *
-
+import sys
 
 if __name__ == '__main__':
 
@@ -12,9 +12,21 @@ if __name__ == '__main__':
 	auth_header = spotify_authenticator.generate_header()
 
 	username = spotify_authenticator.username
-	wrapped_2019 = 'https://open.spotify.com/playlist/37i9dQZF1Ethb70Ir9WW6o?si=yrv4GDu6SBeUc8PexoZ_HQ'
+	
+	playlists = get_playlists(username,auth_header)
 
-	wrapped_id = get_playlist_id(wrapped_2019)
+	found = 0
+
+	for playlist in playlists:
+		# print(playlist['name'],'|',playlist['id'])
+		if 'Top Songs 2019' in playlist['name']:
+			found = 1
+			wrapped_id = playlist['id']
+			break
+
+	if not found:
+		print('Spotify Wrapped 2019 PLaylist not found! Please ensure you are following this playlist!')
+		sys.exit(0)
 
 	tracks = get_tracks(wrapped_id,auth_header)
 

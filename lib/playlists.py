@@ -8,7 +8,7 @@ def get_playlist_id(share_url):
     return id
 
 def get_playlists(user,auth_header):
-    response = requests.get('https://api.spotify.com/v1/users/{}/playlists'.format(username),
+    response = requests.get('https://api.spotify.com/v1/users/{}/playlists'.format(user),
                             headers=auth_header)
 
     return_package = json.loads(response.text)
