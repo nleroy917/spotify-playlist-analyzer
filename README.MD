@@ -7,9 +7,9 @@ It can be run locally on your machine to analyze your own playlists, however. Cu
 1.  Git clone this repo onto your system
 
 2.  Run the setup.sh script to download the gecko driver and set up the directories: 
-	For Linux:
+	**For Linux**:
 	```./setup.sh```
-	for MacOSX:
+	**for MacOSX**:
 	```sh setup.sh```
 
 3.  Fill out the config file accordingly with your username and password
