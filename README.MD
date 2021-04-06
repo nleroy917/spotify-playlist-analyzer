@@ -1,3 +1,6 @@
+# Archived Repo for Historical Purposes
+This code was the gensis of my site [spottydata.com](https://www.spottydata.com/). I am keeping it here for historical purposes, but the project has long since progressed to a more advanced web-app version that can be found [here](https://github.com/NLeRoy917/spottydata).
+
 # Spotify Wrapped Analysis
 ---
 The purpose of this code is to provide the groundwork for a potential website that can analyze someones spotify-wrapped playlist and provide analytics on all of the songs/music
